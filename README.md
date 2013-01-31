@@ -2,8 +2,9 @@ REVERSHAL
 =========
 
 
- Reverse hash cracker from known text 
- Martin Obiols - @olemoudi - http://makensi.es
+Reverse hash cracker from known text 
+Martin Obiols - @olemoudi - http://makensi.es
+---------------------------------------------
 
 Reverse hash cracker to perform attacks from known plaintext tokens.
 
