@@ -325,7 +325,7 @@ if __name__ == '__main__':
     global last_ts
     last_ts = multiprocessing.Value('i', int(time.time()))
     pool = multiprocessing.Pool(processes=args.processes)
-    result_iterator = pool.imap(mcrack, masks, 512)
+    result_iterator = pool.imap(mcrack, masks, 10000)
     stats_loop()
 
 
