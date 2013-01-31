@@ -1,11 +1,7 @@
+REVERSHAL
+=========
 
-                             _           _ 
-                            | |         | |
- _ __ _____   _____ _ __ ___| |__   __ _| |
-| '__/ _ \ \ / / _ \ '__/ __| '_ \ / _` | |
-| | |  __/\ V /  __/ |  \__ \ | | | (_| | |
-|_|  \___| \_/ \___|_|  |___/_| |_|\__,_|_|
-                                           
+
  Reverse hash cracker from known text 
  Martin Obiols - @olemoudi - http://makensi.es
 
