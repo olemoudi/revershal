@@ -10,7 +10,7 @@ Reverse hash cracker to perform attacks from known plaintext tokens.
 For example lets assume you have a hash and *you know* it is generated from
 something like:
 
-    string = 'input1 + sep + input2 + input3'
+    string = 'input1 + sep + input2 + sep + input3'
     hash = f(string)
 
 From a security standpoint when the hash should not be guessable/predictable by an attacker (for example in a reset password function), at least one of those inputs should be a strong secret (key) known only by the application. However, multiple custom made applications generate hashes in this fashion just using predictable inputs such as email, full name, userid or the timestamp of the instant they are generated. For example:
