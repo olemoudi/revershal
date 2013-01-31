@@ -186,7 +186,7 @@ def guess(hash):
         if len(algos[algo]) == len(h):
             okblue("Hash looks like %s" % algo)
             return algo
-    warn('Hash do not match any known algorithm')
+    warn('Hash does not match any known algorithm')
     header('Exiting...')
     sys.exit(-1)
 
@@ -287,7 +287,7 @@ if __name__ == '__main__':
 
     header("Target hash: %s" % args.string_hash.strip())
     if not check_algo(algo, args.string_hash):
-        fail("Hash do not look like %s" % algo)
+        fail("Hash does not look like %s" % algo)
         fail("Consider adding -g flag")
         header('Exiting...')
         sys.exit(-1)
