@@ -314,7 +314,7 @@ if __name__ == '__main__':
     global found
     found = multiprocessing.Value(ctypes.c_bool, False) 
     global target_hash
-    target_hash = multiprocessing.Value(ctypes.c_char_p, args.string_hash.strip()) 
+    target_hash = multiprocessing.Value(ctypes.c_char_p, args.string_hash.strip().lower()) 
     global current_mask, diff_mask
     current_mask = multiprocessing.Value(ctypes.c_char_p, '', lock=True) 
     diff_mask = current_mask.value
