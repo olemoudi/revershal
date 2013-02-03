@@ -268,7 +268,8 @@ if __name__ == '__main__':
     parser.add_argument('-g', '--guess-algorithm', help='Try guessing the algorithm in use (checks only length)', action='store_true')
     parser.add_argument('--timestamps', help='Add integer timestamps for all the instants in the last X minutes in the past', default=None, type=int)
     parser.add_argument('-a', '--algorithm', help='Hash algorithm in use (default md5)', default='md5', choices=list(hashlib.algorithms))
-    parser.add_argument('-p', '--processes', help='Parallel processes to use (default 2)', default=4, type=int)
+    parser.add_argument('-p', '--processes', help='Parallel processes to use (default 3)', default=3, type=int)
+    parser.add_argument('-o', '--offset-hours', help='Hours to add (or substract) when using --timestamps', default=0, type=int)
     args = parser.parse_args()
 
     print_banner()
@@ -285,7 +286,7 @@ if __name__ == '__main__':
 
     tokens = process_tokens(filter(len, [x.strip() for x in open(args.token_file)]))
 
-    header("Target hash: %s" % args.string_hash.strip())
+    header("Target hash: %s" % args.string_hash.strip().lower())
     if not check_algo(algo, args.string_hash):
         fail("Hash does not look like %s" % algo)
         fail("Consider adding -g flag")
@@ -298,7 +299,7 @@ if __name__ == '__main__':
     global total
     total = 0
     global current_time
-    current_time = int(time.time())
+    current_time = int(time.time()) + (args.offset_hours * 3600)
     for n in range(len(tokens)+1)[1:]:
         if n == 1:
             total += (factorial(len(tokens))/factorial(len(tokens)-n))
