@@ -299,6 +299,8 @@ if __name__ == '__main__':
     global total
     total = 0
     global current_time
+    if args.offset_hours:
+        header("%i hours offset applied to timestamps" % args.offset_hours)
     current_time = int(time.time()) + (args.offset_hours * 3600)
     for n in range(len(tokens)+1)[1:]:
         if n == 1:
@@ -306,6 +308,7 @@ if __name__ == '__main__':
         else:
             total += (factorial(len(tokens))/factorial(len(tokens)-n)) * len(seps) 
     if args.timestamps and args.timestamps > 0:
+        header("Last %i minutes to be considered..." % args.timestamps)
         for n in range(len(tokens)+1)[1:]:
             total += (factorial(len(tokens))/factorial(len(tokens)-n)) * (n+1) * args.timestamps * 60 * len(seps)
     header("Total of %i masks to compute..." % total)
