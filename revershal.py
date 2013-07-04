@@ -208,8 +208,12 @@ def get_timestamps(minutes):
     '''
     global current_time
     result = []
-    for i in range((minutes*60)):
-        result.append(str(current_time-i))
+    for i in range(minutes*60):
+        #result.append(str(current_time-i)) # 1372948564.262796
+        result.append(str(int(current_time)-i)) # 1372948580
+        result.append(time.ctime(current_time-i)) # 'Thu Jul  4 16:36:39 2013'
+        #d = datetime.date.fromtimestamp(ts-i)
+        #result.append(d.isoformat())
     return result
 
 def stats_loop():
