@@ -8,8 +8,8 @@
 | | |  __/\ V /  __/ |  \__ \ | | | (_| | |
 |_|  \___| \_/ \___|_|  |___/_| |_|\__,_|_|
                                            
- Reverse hash cracker from known text
- Martin Obiols - @olemoudi - http://makensi.es
+ Reverse hash cracker from known text Martin Obiols - @olemoudi -
+ http://makensi.es
 
 
 Reverse hash cracker to perform attacks from known plaintext tokens.
@@ -17,16 +17,24 @@ Reverse hash cracker to perform attacks from known plaintext tokens.
 For example lets assume you have a hash and *you know* it is generated from
 something like:
 
-string = 'input1 + sep + input2 + sep + input3'
-hash = f(string)
+string = 'input1 + sep + input2 + sep + input3' hash = f(string)
 
-From a security standpoint when the hash should not be guessable/predictable by an attacker (for example in a reset password function), you should be using HMAC or if you are so sloppy to use unkeyed hashes, you should at least make one of the inputs a secret. However, multiple custom make applications generate hashes in this fashion just using predictable inputs such as email, full name, userid or the timestamp of the instant they are generated. For example:
+From a security standpoint when the hash should not be guessable/predictable by
+an attacker (for example in a reset password function), you should be using
+HMAC or if you are so sloppy to use unkeyed hashes, you should at least make
+one of the inputs a secret. However, multiple custom make applications generate
+hashes in this fashion just using predictable inputs such as email, full name,
+userid or the timestamp of the instant they are generated. For example:
 
 reset_password_hash = sha512( username + '.' + email + '.' + timestamp )
 
-In this situation, getting knowledge about the particular input format that the hashing function receives is the key to compromising the functionality (reset password in this case)
+In this situation, getting knowledge about the particular input format that the
+hashing function receives is the key to compromising the functionality (reset
+        password in this case)
 
-revershal does just that. Just feed it with your known predictable tokens and a valid hash obtained from the application and it will compute all potential formats, trying to come up with the one that was used.
+revershal does just that. Just feed it with your known predictable tokens and a
+valid hash obtained from the application and it will compute all potential
+formats, trying to come up with the one that was used.
 '''
 
 import sys
@@ -36,8 +44,13 @@ import argparse
 import time
 from math import factorial
 import multiprocessing
-import pytz
-from pytz import timezone
+try:
+    import pytz
+    from pytz import timezone
+except:
+    print "You need pytz module"
+    print "easy_install pytz"
+    sys.exit(-1)
 from multiprocessing import Queue, Lock, Value
 from Queue import Empty, Full
 import datetime
