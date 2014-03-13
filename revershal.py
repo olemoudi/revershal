@@ -22,7 +22,7 @@ string = 'input1 + sep + input2 + sep + input3' hash = f(string)
 From a security standpoint when the hash should not be guessable/predictable by
 an attacker (for example in a reset password function), you should be using
 HMAC or if you are so sloppy to use unkeyed hashes, you should at least make
-one of the inputs a secret. However, multiple custom make applications generate
+one of the inputs a secret. However, multiple custom applications generate
 hashes in this fashion just using predictable inputs such as email, full name,
 userid or the timestamp of the instant they are generated. For example:
 
