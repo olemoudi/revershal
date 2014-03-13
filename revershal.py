@@ -290,7 +290,7 @@ def main():
     
     msg('%i total datetime formats loaded' % len(dt_formats))
 
-    pool = multiprocessing.Pool(maxtasksperchild=100000)
+    pool = multiprocessing.Pool(maxtasksperchild=1000000)
     try:
         dt_strings = gen_dt_strings()
         partial_time = time.time()
