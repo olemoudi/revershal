@@ -267,8 +267,8 @@ def main():
     global algo, inputs, date, dt_formats, target_hash, partial_counter, partial_time, total_hashes, partial_hashes, dt_strings, inputs_finished
     parser = argparse.ArgumentParser()
     parser.add_argument('-t', '--token-file', help='File containing known tokens (email, nick, id, password...), one per line', required=True)
-    parser.add_argument('-f', '--date-formats', help='File containing strftime marks', required=False, default='timeformats.txt')
-    parser.add_argument('-s', '--string-hash', help='Single hash to check against', required=True)
+    parser.add_argument('-f', '--date-formats', help='File containing strftime masks, one per line', required=False, default='timeformats.txt')
+    parser.add_argument('-s', '--string-hash', help='Single hash to check', required=True)
     parser.add_argument('-d', '--date', help='server response HTTP Date header value', required=False, default='')
     parser.add_argument('-m', '--use-memory', help='Force pre-loading of permutations into memory to increase speed', required=False, action='store_true')
     args = parser.parse_args()
