@@ -1,0 +1,52 @@
+# 1394652573
+%s
+# Wed Mar 12 13:37:00 CET 2014
+%a %b %d %H:%M:%S %Z %Y
+# Wed Mar 12 13:37 CET 2014
+%a %b %d %H:%M %Z %Y
+# Wed Mar 12 13:37:00 2014
+%a %b %d %H:%M:%S %Y
+# Wed Mar 12 13:37 2014
+%a %b %d %H:%M %Y
+# Wed Mar 12 01:37 PM 2014
+%a %b %d %I:%M %p %Y
+# Wed Mar 12 01:37
+%a %b %d %H:%M
+# Wed Mar 11 11:15 AM 
+%a %b %d %I:%M %p
+# Wed Mar 11 11:15:29 AM 2009
+%a %b %d %I:%M:%S %p %Y
+# Tue, 11 Mar 2014 13:51:23 GMT
+%a, %d %b %Y %H:%M:%S %Z
+# Sunday, June 15, 2008 9:15 PM
+%A, %B %d, %Y %I:%M %p
+# Sunday, June 15, 2008 9:15 
+%A, %B %d, %Y %H:%M
+# Sunday, June 15, 2008 9:15:45
+%A, %B %d, %Y %H:%M:%S
+# Sunday, June 15, 2008 9:15:45 AM
+%A, %B %d, %Y %I:%M:%S %p
+# Sun, June 15, 2008 9:15 PM
+%a, %B %d, %Y %I:%M %p
+# Sun, June 15, 2008 9:15 
+%a, %B %d, %Y %H:%M
+# Sun, June 15, 2008 9:15:45
+%a, %B %d, %Y %H:%M:%S
+# Sun, June 15, 2008 9:15:45 AM
+%a, %B %d, %Y %I:%M:%S %p
+# 6/15/2014
+%m/%d/%Y
+# 15/6/2014
+%d/%m/%Y
+# 6/15/14
+%m/%d/%y
+# 15/6/14
+%d/%m/%y
+# 6-15-2014
+%m-%d-%Y
+# 15-6-2014
+%d-%m-%Y
+# 6-15-14
+%m-%d-%y
+# 15-6-14
+%d-%m-%y
