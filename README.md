@@ -13,7 +13,7 @@ something like:
     string = 'input1 + sep + input2 + sep + input3'
     hash = f(string)
 
-From a security standpoint when the hash should not be guessable/predictable by an attacker (for example in a reset password function), at least one of those inputs should be a strong secret (key) known only by the application. However, multiple custom made applications generate hashes in this fashion just using predictable inputs such as email, full name, userid or the timestamp of the instant they are generated. For example:
+From a security standpoint when the hash should not be guessable/predictable by an attacker (for example in a reset password function), you should be using HMAC functions or, at the very least, one of those inputs should be a strong secret (key) known only by the application. However, multiple custom made applications generate hashes in this fashion just using predictable inputs such as email, full name, userid or the timestamp of the instant they are generated. For example:
 
     reset_password_hash = sha512( username + '-' + email + '-' + timestamp )
 
@@ -27,7 +27,7 @@ for example:
     token1
     token2
     token3
-    $ ./revershal.py -t test.txt -s `echo -n "token1.token3.token2" | md5sum | cut -d" " -f1` -g 
+    $ ./revershal.py -t test.txt -s `echo -n "token1.token3.token2" | md5sum | cut -d" " -f1` -d "Fri, 07 Mar 2014 11:00:03 GMT"
     [*] Guessing algorithm from hash...
     [*] [WARNING] Guessing will only look at string length, not valid alphabet
     [*] Hash looks like md5
